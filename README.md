@@ -1,7 +1,7 @@
 ## Automation Framework ##
 
 ### About ###
-A framework for browser automation using Selenium Web Driver, TestNG as test engine and report generation with the help of Extent Reports. 
+A Data Driven framework for browser automation using Selenium Web Driver, TestNG as test engine and report generation with the help of Extent Reports. 
 
 ### Documentation ###
 
