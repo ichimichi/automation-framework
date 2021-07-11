@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -40,12 +41,10 @@ public class Core {
 
     @BeforeTest
     public void beforeTest() {
-
     }
 
     @BeforeMethod
     public void beforeMethod() {
-        logger = report.createTest("Test");
     }
 
     @AfterMethod
@@ -132,14 +131,32 @@ public class Core {
         }
     }
 
+    public void createTest(String testName) {
+        logger = report.createTest(testName);
+    }
+
     public void reportPass(String reportString) {
-        logger.log(Status.PASS, reportString);
+        logger.pass(reportString);
     }
 
     public void reportFail(String reportString) {
-        logger.log(Status.FAIL, reportString);
+        logger.fail(reportString);
         logFailScreenShot();
         Assert.fail(reportString);
+    }
+
+    public void initializeBrowser(String browserName) {
+        switch (browserName.toLowerCase(Locale.ROOT)) {
+            case "chrome":
+                initializeBrowser(BrowserType.CHROME);
+                break;
+            case "mozilla":
+                initializeBrowser(BrowserType.MOZILLA);
+                break;
+            case "ie":
+                initializeBrowser(BrowserType.IE);
+                break;
+        }
     }
 
     public void initializeBrowser(BrowserType type) {
@@ -192,7 +209,8 @@ public class Core {
             driver.get(url);
             reportPass(url + " loaded Successfully");
         } catch (Exception e) {
-            reportFail("something went wrong");
+            e.printStackTrace();
+            reportFail(e.getMessage());
         }
 
     }
@@ -457,7 +475,7 @@ public class Core {
 
     public void switchToFrameByIndex(int index) {
         try {
-           driver.switchTo().frame(index);
+            driver.switchTo().frame(index);
         } catch (Exception e) {
             reportFail(e.getMessage());
         }

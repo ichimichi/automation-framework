@@ -7,20 +7,25 @@ import org.testng.annotations.Test;
 /**
  * Hello world!
  */
-public class DemoTest extends Core {
+public class DemoTestA extends Core {
+
     @Test
-    public void demoTestA() {
+    public void test1() {
         initializeBrowser(BrowserType.CHROME);
+        createTest("Test 1");
         openURL("https://www.facebook.com");
+
         elementEnterText("//div/input[@id='email' and @name='email']", "test@gmail.com");
         elementEnterText("//div/input[@id='pass' and @name='pass']", "passsword12345");
         logScreenShot();
     }
 
     @Test
-    public void demoTestB() {
+    public void test2() {
         initializeBrowser(BrowserType.CHROME);
+        createTest("Test 2");
         openURL("https://www.facebook.com");
+
         elementEnterText("//div/input[@id='email' and @name='email']", "test@test.com");
         elementEnterText("//div/input[@id='pass' and @name='pass']", "passIs123456");
         logScreenShot();
