@@ -3,3 +3,4 @@ src/test/java/com/ichimichi/automation/selenium/framework/resources/drivers
 src/test/java/com/ichimichi/automation/selenium/framework/reports/*.html
 src/test/java/com/ichimichi/automation/selenium/framework/reports/screenshots/*.jpg
 src/test/java/com/ichimichi/automation/selenium/framework/reports/screenshots/*.png
+src/test/java/com/ichimichi/automation/selenium/framework/data/
