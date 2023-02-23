@@ -10,7 +10,7 @@
 
     <name>framework</name>
     <url>http://www.ichimichi.com</url>
-
+	<packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>

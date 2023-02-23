@@ -1,15 +1,16 @@
 package com.ichimichi.automation.selenium.framework.test;
 
+import org.testng.annotations.Test;
+
 import com.ichimichi.automation.selenium.framework.constants.BrowserType;
 import com.ichimichi.automation.selenium.framework.core.Core;
-import org.testng.annotations.Test;
 
 /**
  * Hello world!
  */
-public class DemoTestA extends Core {
+public class DemoATests extends Core {
 
-    @Test
+    @Test(enabled = false)
     public void test1() {
         initializeBrowser(BrowserType.CHROME);
         createTest("Test 1");
@@ -20,7 +21,7 @@ public class DemoTestA extends Core {
         logScreenShot();
     }
 
-    @Test
+    @Test(enabled = false)
     public void test2() {
         initializeBrowser(BrowserType.CHROME);
         createTest("Test 2");

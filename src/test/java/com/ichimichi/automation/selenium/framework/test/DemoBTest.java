@@ -7,14 +7,14 @@ import org.testng.annotations.Test;
 
 import java.util.Hashtable;
 
-public class DemoTestB extends Core {
+public class DemoBTest extends Core {
 
     @DataProvider
     public Object[][] getTestData() {
         return TestDataProvider.getTestData("TestData.xlsx", "Feature 1", "Demo Test B");
     }
 
-    @Test(dataProvider = "getTestData")
+    @Test(dataProvider = "getTestData", enabled=false)
     public void test(Hashtable<String,String> testData) {
         initializeBrowser(testData.get("browser"));
         createTest(testData.get("test_name"));

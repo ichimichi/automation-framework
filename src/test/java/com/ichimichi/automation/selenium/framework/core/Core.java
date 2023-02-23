@@ -165,7 +165,7 @@ public class Core {
             switch (type) {
                 case CHROME:
                     System.setProperty("webdriver.chrome.driver",
-                            System.getProperty("user.dir") + "/src/test/java/com/ichimichi/automation/selenium/framework/resources/drivers/chromedriver");
+                            System.getProperty("user.dir") + "/src/test/java/com/ichimichi/automation/selenium/framework/resources/drivers/chromedriver.exe");
                     driver = new ChromeDriver();
                     break;
                 case MOZILLA:
